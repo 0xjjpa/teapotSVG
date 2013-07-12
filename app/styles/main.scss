@@ -43,11 +43,11 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
   position: absolute;
   top: 90px;
   left: 50px;
-  -webkit-animation: _cogs-rotate-right 4s ease 0s infinite alternate;
-  -moz-animation: _cogs-rotate-right 4s ease 0s infinite alternate;
-  -ms-animation: _cogs-rotate-right 4s ease 0s infinite alternate;
-  -o-animation: _cogs-rotate-right 4s ease 0s infinite alternate;
-  animation: _cogs-rotate-right 4s ease 0s infinite alternate;
+  -webkit-animation: _cogs-rotate-right 1s linear 1s infinite;
+  -moz-animation: _cogs-rotate-right 1s linear 1s infinite;
+  -ms-animation: _cogs-rotate-right 1s linear 1s infinite;
+  -o-animation: _cogs-rotate-right 1s linear 1s infinite;
+  animation: _cogs-rotate-right 1s linear 1s infinite;
 }
 .csstransitions .animation.cogs .cog2 {
   top: 0px;
@@ -55,9 +55,9 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
   position: absolute;
   top: 15px;
   left: 179px;
-  -webkit-animation: _cogs-rotate-left 4s ease 0s infinite alternate;
-  -moz-animation: _cogs-rotate-left 4s ease 0s infinite alternate;
-  -ms-animation: _cogs-rotate-left 4s ease 0s infinite alternate;
-  -o-animation: _cogs-rotate-left 4s ease 0s infinite alternate;
-  animation: _cogs-rotate-left 4s ease 0s infinite alternate;
+  -webkit-animation: _cogs-rotate-left 1s linear 1s infinite;
+  -moz-animation: _cogs-rotate-left 1s linear 1s infinite;
+  -ms-animation: _cogs-rotate-left 1s linear 1s infinite;
+  -o-animation: _cogs-rotate-left 1s linear 1s infinite;
+  animation: _cogs-rotate-left 1s linear 1s infinite;
 }
