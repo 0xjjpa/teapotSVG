@@ -1,3 +1,4 @@
+app/templates
 node_modules
 dist
 .tmp

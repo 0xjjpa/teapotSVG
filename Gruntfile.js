@@ -136,11 +136,18 @@ module.exports = function (grunt) {
                 options: {
                     pretty: true
                 },
-                files: [{
+                files: [
+                {
                     expand: true,
                     cwd: '<%= yeoman.app %>',
                     dest: '.tmp',
                     src: '*.jade',
+                    ext: '.html'
+                },{
+                    expand: false,
+                    cwd: '<%= yeoman.app %>',
+                    dest: 'app/templates',
+                    src: 'views/blocks/*.jade',
                     ext: '.html'
                 }]
             }
