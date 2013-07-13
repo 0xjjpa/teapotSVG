@@ -5,9 +5,9 @@ mixin cw
     | Made with love by 
     a(href='http://centralway.com', alt='Centralway Company') Centralway
     
-mixin thumbnail(name, description, image)
-  li.thumbnail
-    .media
+mixin thumbnail(id, name, description, image)
+  li.thumbnail(style='cursor:pointer;')
+    .media(data-id='#{id}')
       a.pull-left(href='#')
         img.media-object(data-src='holder.js/64x64', alt='64x64', style='width: 64px;', src='#{image}')
       .media-body

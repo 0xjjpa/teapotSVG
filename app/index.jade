@@ -25,22 +25,18 @@ html.no-js
     script(src='bower_components/modernizr/modernizr.js')
     //
        endbuild 
-    // --Shadow DOM version--
-    link(rel="import", href="templates/views/blocks/gears/poly-gears.html")
   body
     .container
       .demo-headline
         h1.demo-logo
-          // --Shadow DOM version--
-          gears
-          //include views/blocks/gears/gears
+          include views/blocks/gears/view
           | #{app}
           small Web animations lab gallery for testing and benchmarking animations
       .row(style="padding-bottom: 100px")
         .span6.animations
           ul.thumbnails
-            +thumbnail("Gears", "Two gears rotating. The container is rotated through CSS3 transform and translate option", "/views/blocks/gears/gears.jpg")
-            +thumbnail("CW Logo", "Centralway Logo. Exported from Adobe Illustrator, animated by SVG native Animate Attrs", "/views/blocks/cwlogo/cwlogo.jpg")
+            +thumbnail('gears', "Gears", "Two gears rotating. The container is rotated through CSS3 transform and translate option", "/views/blocks/gears/gears.jpg")
+            +thumbnail('cwlogo', "CW Logo", "Centralway Logo. Exported from Adobe Illustrator, animated by SVG native Animate Attrs", "/views/blocks/cwlogo/cwlogo.jpg")
         .span6
           .viewport
             object(data="/views/blocks/cwlogo/cwlogo.svg", type="image/svg+xml")
@@ -74,3 +70,8 @@ html.no-js
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src='//www.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
+    //
+      build:js scripts/main.js 
+    script(data-main='scripts/main', src='bower_components/requirejs/require.js')
+    //
+      endbuild 
