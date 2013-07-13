@@ -29,6 +29,10 @@ module.exports = function (grunt) {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
                 tasks: ['coffee:dist']
             },
+            jade: {
+                files: ['<%= yeoman.app %>/{,*/}*.jade'],
+                tasks: ['jade']
+            },
             coffeeTest: {
                 files: ['test/spec/{,*/}*.coffee'],
                 tasks: ['coffee:test']
@@ -46,7 +50,7 @@ module.exports = function (grunt) {
                     livereload: LIVERELOAD_PORT
                 },
                 files: [
-                    '<%= yeoman.app %>/*.html',
+                    '.tmp/{,*/}*.html',
                     '.tmp/styles/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -125,6 +129,20 @@ module.exports = function (grunt) {
                     run: true,
                     urls: ['http://localhost:<%= connect.options.port %>/index.html']
                 }
+            }
+        },
+        jade: {
+            dist: {
+                options: {
+                    pretty: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: '.tmp',
+                    src: '*.jade',
+                    ext: '.html'
+                }]
             }
         },
         coffee: {
@@ -221,7 +239,7 @@ module.exports = function (grunt) {
             options: {
                 dest: '<%= yeoman.dist %>'
             },
-            html: '<%= yeoman.app %>/index.html'
+            html: '.tmp/index.html'
         },
         usemin: {
             options: {
@@ -281,8 +299,8 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= yeoman.app %>',
-                    src: '*.html',
+                    cwd: '.tmp',
+                    src: '{,*/}*.html',
                     dest: '<%= yeoman.dist %>'
                 }]
             }
@@ -320,15 +338,18 @@ module.exports = function (grunt) {
         },
         concurrent: {
             server: [
+                'jade',
                 'compass',
                 'coffee:dist',
                 'copy:styles'
             ],
             test: [
+                'jade',
                 'coffee',
                 'copy:styles'
             ],
             dist: [
+                'jade',
                 'coffee',
                 'compass',
                 'copy:styles',
