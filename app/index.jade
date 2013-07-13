@@ -25,13 +25,16 @@ html.no-js
     script(src='bower_components/modernizr/modernizr.js')
     //
        endbuild 
-    link(rel="import", href="templates/views/blocks/gears.html")
+    // --Shadow DOM version--
+      link(rel="import", href="templates/views/blocks/poly-gears.html")
   body
     .container
       .row
         .span6
           h1.demo-logo
-            gears
+            // --Shadow DOM version--
+              gears
+            include views/blocks/gears
             | #{app}
             small Web animations lab gallery for testing and benchmarking animations
           +cw

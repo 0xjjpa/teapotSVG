@@ -110,7 +110,7 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
-            server: '.tmp'
+            server: ['.tmp', '<%= yeoman.app %>/templates']
         },
         jshint: {
             options: {
@@ -144,7 +144,7 @@ module.exports = function (grunt) {
                     src: '*.jade',
                     ext: '.html'
                 },{
-                    expand: false,
+                    expand: true,
                     cwd: '<%= yeoman.app %>',
                     dest: 'app/templates',
                     src: 'views/blocks/*.jade',
