@@ -1,6 +1,14 @@
 !!! 5
 html.no-js
   include views/config
+  mixin thumbnail(name, description, image)
+    li.thumbnail
+      .media
+        a.pull-left(href='#')
+          img.media-object(data-src='holder.js/64x64', alt='64x64', style='width: 64px;', src='#{image}')
+        .media-body
+          h4.media-heading #{name}
+          | #{description}
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
@@ -11,8 +19,8 @@ html.no-js
        Place favicon.ico and apple-touch-icon.png in the root directory 
     //
       | build:css(\{.tmp,app}) styles/main.css 
-    link(rel='stylesheet', href='styles/main.css')
     link(rel='stylesheet', href='bower_components/flat-ui/css/flat-ui.css')
+    link(rel='stylesheet', href='styles/main.css')
     //
        endbuild
     //
@@ -29,24 +37,33 @@ html.no-js
       link(rel="import", href="templates/views/blocks/poly-gears.html")
   body
     .container
-      .row
+      .demo-headline
+        h1.demo-logo
+          // --Shadow DOM version--
+            gears
+          include views/blocks/gears/gears
+          | #{app}
+          small Web animations lab gallery for testing and benchmarking animations
+      .row(style="padding-bottom: 100px")
+        .span6.animations
+          ul.thumbnails
+            +thumbnail("Gears", "Two gears rotating. The container is rotated through CSS3 transform and translate option", "/views/blocks/gears/gears.jpg")
         .span6
-          h1.demo-logo
-            // --Shadow DOM version--
-              gears
-            include views/blocks/gears
-            | #{app}
-            small Web animations lab gallery for testing and benchmarking animations
-          +cw
-        .span6
-          .media
-            a.pull-left(href='#')
-              img.media-object(data-src='holder.js/64x64', alt='64x64', style='width: 64px; height: 64px;', src='http://placehold.it/64x64')
-            .media-body
-              h4.media-heading Media heading
-              | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
-
+          .viewport
+    footer
+      .container
+        .row
+          .span7
+            h3.footer-title 
+              +cw
+          .span5
+            ul.nav.nav-pills.footer-title.pull-right
+              li
+                a(href='http://www.facebook.com/centralway', target='_blank', class='facebook')
+              li
+                a(href='http://twitter.com/centralway', target='_blank', class='twitter')                
+              li
+                a(href='https://plus.google.com/109392403559257694160/posts"', target='_blank', class='gplus')
     //if lt IE 7
       p.chromeframe
         | You are using an
@@ -58,7 +75,7 @@ html.no-js
         | to improve your experience.
     //
       Google Analytics: change UA-XXXXX-X to be your site's ID. 
-    script
+    script.
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src='//www.google-analytics.com/ga.js';

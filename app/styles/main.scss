@@ -8,3 +8,51 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
     margin: 50px auto 0 auto;
     width: 300px;
 }
+
+.viewport {
+  background: url('../images/imac.png') 0 0 no-repeat;
+  background-size: 100%;
+  padding: 19px 19px 133px;
+  height: 230px;
+}
+
+.animations {
+  height: 382px;
+  overflow-y: scroll;
+}
+
+.footer-banner {
+  background-color: #2C3E50;
+  color: white;
+  ul li {
+    border-color: #34495E;
+  }
+}
+
+.facebook {
+  background:url(../images/facebook.png) no-repeat center center;
+  width: 12px;
+  height: 22px;
+  &:hover {
+    background:url(../images/facebook-hover.png) no-repeat center center;
+  }
+}
+  
+.twitter {
+  background:url(../images/twitter.png) no-repeat center center;
+  width: 21px;
+  height: 20px;
+  &:hover {
+    background:url(../images/twitter-hover.png) no-repeat center center;
+  }
+}
+  
+.gplus {
+  background:url(../images/gplus.png) no-repeat center center;
+  width: 22px;
+  height: 22px;
+  &:hover {
+    background:url(../images/gplus-hover.png) no-repeat center center;
+  }
+}
+  
