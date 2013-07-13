@@ -1,9 +1,10 @@
 !!! 5
 html.no-js
+  include views/config
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    title
+    title #{app}
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width')
     //
@@ -21,17 +22,22 @@ html.no-js
        endbuild 
   body
     .container
-      .demo-headline
-        h1.demo-logo
-          .cogs.animation
-            .cog1
-              img(src='images/cog_big.svg')
-            .cog2
-              img(src='images/cog_small.svg')
-          | TeapotSVG
-          small Web animations lab for testing and benchmarking animations
-      //
-         /demo-headline 
+      .row
+        .span6
+          h1.demo-logo
+            include views/blocks/gears
+            | #{app}
+            small Web animations lab gallery for testing and benchmarking animations
+          +cw
+        .span6
+          .media
+            a.pull-left(href='#')
+              img.media-object(data-src='holder.js/64x64', alt='64x64', style='width: 64px; height: 64px;', src='http://placehold.it/64x64')
+            .media-body
+              h4.media-heading Media heading
+              | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+
     //if lt IE 7
       p.chromeframe
         | You are using an

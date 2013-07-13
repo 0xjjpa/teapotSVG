@@ -2,62 +2,16 @@ $iconSpritePath: "../images/glyphicons-halflings.png";
 $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
 @import 'sass-bootstrap/lib/bootstrap';
-@import "compass/css3/transform";
+@import 'blocks/all';
 
 .hero-unit {
     margin: 50px auto 0 auto;
     width: 300px;
 }
 
-@keyframes _cogs-rotate-left {
-  from { 
-    @include transform(rotateZ(0deg))
+.csstransitions {
+  @include gears;
+  .animation {
+    display: block;  
   }
-  to {
-    @include transform(rotateZ(-135deg))
-  }
-}
-
-@keyframes _cogs-rotate-right {
-  from { 
-    @include transform(rotateZ(0deg))
-  }
-  to {
-    @include transform(rotateZ(90deg))
-  }
-}
-
-.csstransitions .animation {
-  display: block;
-}
-.csstransitions .animation.cogs {
-  display: block;
-  margin: 0 auto;
-  height: 300px;
-  width: 420px;
-  position: relative;
-}
-.csstransitions .animation.cogs .cog1 {
-  top: 0px;
-  left: 0px;
-  position: absolute;
-  top: 90px;
-  left: 50px;
-  -webkit-animation: _cogs-rotate-right 1s linear 1s infinite;
-  -moz-animation: _cogs-rotate-right 1s linear 1s infinite;
-  -ms-animation: _cogs-rotate-right 1s linear 1s infinite;
-  -o-animation: _cogs-rotate-right 1s linear 1s infinite;
-  animation: _cogs-rotate-right 1s linear 1s infinite;
-}
-.csstransitions .animation.cogs .cog2 {
-  top: 0px;
-  left: 0px;
-  position: absolute;
-  top: 15px;
-  left: 179px;
-  -webkit-animation: _cogs-rotate-left 1s linear 1s infinite;
-  -moz-animation: _cogs-rotate-left 1s linear 1s infinite;
-  -ms-animation: _cogs-rotate-left 1s linear 1s infinite;
-  -o-animation: _cogs-rotate-left 1s linear 1s infinite;
-  animation: _cogs-rotate-left 1s linear 1s infinite;
 }

@@ -1,0 +1,54 @@
+@import 'compass/css3/transform';
+
+@keyframes _cogs-rotate-left {
+  from { 
+    @include transform(rotateZ(0deg))
+  }
+  to {
+    @include transform(rotateZ(-135deg))
+  }
+}
+
+@keyframes _cogs-rotate-right {
+  from { 
+    @include transform(rotateZ(0deg))
+  }
+  to {
+    @include transform(rotateZ(90deg))
+  }
+}
+
+@mixin gears {
+  .gears {
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    height: 300px;
+    width: 420px;
+    position: relative;
+    .gear1 {
+      top: 0px;
+      left: 0px;
+      position: absolute;
+      top: 90px;
+      left: 50px;
+      -webkit-animation: _cogs-rotate-right 1s linear 1s infinite;
+      -moz-animation: _cogs-rotate-right 1s linear 1s infinite;
+      -ms-animation: _cogs-rotate-right 1s linear 1s infinite;
+      -o-animation: _cogs-rotate-right 1s linear 1s infinite;
+      animation: _cogs-rotate-right 1s linear 1s infinite;
+    }
+    .gear2 {
+      top: 0px;
+      left: 0px;
+      position: absolute;
+      top: 15px;
+      left: 179px;
+      -webkit-animation: _cogs-rotate-left 1s linear 1s infinite;
+      -moz-animation: _cogs-rotate-left 1s linear 1s infinite;
+      -ms-animation: _cogs-rotate-left 1s linear 1s infinite;
+      -o-animation: _cogs-rotate-left 1s linear 1s infinite;
+      animation: _cogs-rotate-left 1s linear 1s infinite;
+    }
+  }
+}
