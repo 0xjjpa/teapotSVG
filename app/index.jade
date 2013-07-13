@@ -34,14 +34,14 @@ html.no-js
     //
        endbuild 
     // --Shadow DOM version--
-      link(rel="import", href="templates/views/blocks/poly-gears.html")
+    link(rel="import", href="templates/views/blocks/gears/poly-gears.html")
   body
     .container
       .demo-headline
         h1.demo-logo
           // --Shadow DOM version--
-            gears
-          include views/blocks/gears/gears
+          gears
+          //include views/blocks/gears/gears
           | #{app}
           small Web animations lab gallery for testing and benchmarking animations
       .row(style="padding-bottom: 100px")
@@ -50,6 +50,7 @@ html.no-js
             +thumbnail("Gears", "Two gears rotating. The container is rotated through CSS3 transform and translate option", "/views/blocks/gears/gears.jpg")
         .span6
           .viewport
+            gears
     footer
       .container
         .row

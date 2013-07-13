@@ -27,6 +27,9 @@
     width: 420px;
     position: relative;
     .gear1 {
+      width: 189px;
+      height: 187px;
+      background: url('/images/gear_big.svg');
       top: 0px;
       left: 0px;
       position: absolute;
@@ -39,6 +42,9 @@
       animation: _cogs-rotate-right 1s linear 1s infinite;
     }
     .gear2 {
+      width: 134px;
+      height: 134px;
+      background: url('/images/gear_small.svg');
       top: 0px;
       left: 0px;
       position: absolute;
