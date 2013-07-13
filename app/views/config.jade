@@ -4,7 +4,15 @@ mixin cw
   span.centralway
     | Made with love by 
     a(href='http://centralway.com', alt='Centralway Company') Centralway
-
+    
+mixin thumbnail(name, description, image)
+  li.thumbnail
+    .media
+      a.pull-left(href='#')
+        img.media-object(data-src='holder.js/64x64', alt='64x64', style='width: 64px;', src='#{image}')
+      .media-body
+        h4.media-heading #{name}
+        | #{description}
 //
   Variables
 - var app = 'teapotSVG'

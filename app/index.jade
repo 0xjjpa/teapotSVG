@@ -1,14 +1,6 @@
 !!! 5
 html.no-js
   include views/config
-  mixin thumbnail(name, description, image)
-    li.thumbnail
-      .media
-        a.pull-left(href='#')
-          img.media-object(data-src='holder.js/64x64', alt='64x64', style='width: 64px;', src='#{image}')
-        .media-body
-          h4.media-heading #{name}
-          | #{description}
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
@@ -48,9 +40,10 @@ html.no-js
         .span6.animations
           ul.thumbnails
             +thumbnail("Gears", "Two gears rotating. The container is rotated through CSS3 transform and translate option", "/views/blocks/gears/gears.jpg")
+            +thumbnail("CW Logo", "Centralway Logo. Exported from Adobe Illustrator, animated by SVG native Animate Attrs", "/views/blocks/cwlogo/cwlogo.jpg")
         .span6
           .viewport
-            gears
+            object(data="/views/blocks/cwlogo/cwlogo.svg", type="image/svg+xml")
     footer
       .container
         .row

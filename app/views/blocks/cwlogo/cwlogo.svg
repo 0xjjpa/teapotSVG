@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="340.375px" height="340px" viewBox="0 0 340.375 340" enable-background="new 0 0 340.375 340" xml:space="preserve">
+<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="34.875" y1="0" x2="34.875" y2="0">
+  <animate id="line1" attributeName="y2" from="0" to="340" begin="0s" dur="1s" fill="freeze"/>
+</line>
+<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="89.375" y1="0" x2="89.375" y2="0">
+  <animate id="line2" attributeName="y2" from="0" to="340" begin="line1.end" dur="1s" fill="freeze"/>
+</line>
+<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="235.375" y1="0" x2="235.375" y2="0">
+  <animate id="line3" attributeName="y2" from="0" to="340" begin="line2.end" dur="1s" fill="freeze"/>
+</line>
+<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="291.375" y1="0" x2="291.375" y2="0">
+  <animate id="line4" attributeName="y2" from="0" to="340" begin="line3.end" dur="1s" fill="freeze"/>
+</line>
+<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="0" y1="17" x2="0" y2="17">
+  <animate id="line5" attributeName="x2" from="0" to="340.375" begin="line4.end" dur="1s" fill="freeze"/>
+</line>
+<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="0" y1="72" x2="0" y2="72">
+  <animate id="line6" attributeName="x2" from="0" to="340.375" begin="line5.end" dur="1s" fill="freeze"/>
+</line>
+<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="0" y1="263" x2="0" y2="263">
+  <animate id="line7" attributeName="x2" from="0" to="340.375" begin="line6.end" dur="1s" fill="freeze"/>
+</line>
+<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="0" y1="318" x2="0" y2="318">
+  <animate id="line8" attributeName="x2" from="0" to="340.375" begin="line7.end" dur="1s" fill="freeze"/>
+</line>
+<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="0" y1="223" x2="0" y2="223">
+  <animate id="line9" attributeName="x2" from="0" to="340.375" begin="line8.end" dur="1s" fill="freeze"/>
+</line>
+<circle fill="none" stroke="#010101" stroke-miterlimit="10" cx="165.375" cy="147.5" r="0">
+  <animate id="circle1" attributeName="r" from="0" to="75.333" begin="line9.end" dur="1s" fill="freeze"/>
+  <animate id="fill4" attributeName="fill" from="rgb(255,255,255)" to="rgb(0,0,0)" begin="rect4.end" dur="1s" fill="freeze"/>
+</circle>
+<circle fill="none" stroke="#010101" stroke-miterlimit="10" cx="165.375" cy="147.5" r="0">
+  <animate id="circle2" attributeName="r" from="0" to="50" begin="circle1.end" dur="1s" fill="freeze"/>
+  <animate id="fill5" attributeName="fill" from="none" to="rgb(255,255,255)" begin="rect4.end" dur="1s" fill="freeze"/>
+</circle>
+<circle fill="none" stroke="#010101" stroke-miterlimit="10" cx="165.375" cy="147.5" r="0">
+  <animate id="circle3" attributeName="r" from="0" to="27.333" begin="circle2.end" dur="1s" fill="freeze"/>
+  <animate id="fill1" attributeName="fill" from="rgb(255,255,255)" to="rgb(0,0,0)" begin="rect4.end" dur="1s" fill="freeze"/>
+</circle>
+<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="165.375" y1="162.237" x2="165.375" y2="162.237">
+  <animate id="vertical1" attributeName="x2" from="165.375" to="255.971" begin="circle3.end" dur="1s" fill="freeze"/>
+  <animate id="vertical2" attributeName="y2" from="165.375" to="71.641" begin="circle3.end" dur="1s" fill="freeze"/>
+</line>
+<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="165.375" y1="132.237" x2="165.375" y2="132.237">
+  <animate id="vertical3" attributeName="x2" from="165.375" to="255.971" begin="vertical2.end" dur="1s" fill="freeze"/>
+  <animate id="vertical4" attributeName="y2" from="132.237" to="222.833" begin="vertical2.end" dur="1s" fill="freeze"/>
+</line>
+<rect x="193.517" y="115.51" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -38.1402 202.3926)" fill="none" stroke="#010101" stroke-miterlimit="10" width="0" height="0">
+  <animate id="rect3" attributeName="width" from="0" to="63.452" begin="rect2.end" dur="1s" fill="freeze"/>
+  <animate id="rect4" attributeName="height" from="0" to="63.452" begin="rect2.end" dur="1s" fill="freeze"/>
+  <animate id="fill3" attributeName="fill" from="none" to="rgb(255,255,255)" begin="rect4.end" dur="1s" fill="freeze"/>
+</rect>
+<rect x="188.43" y="127.792" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -43.2274 190.1123)" fill="none" stroke="#010101" stroke-miterlimit="10" width="0" height="0">
+  <animate id="rect1" attributeName="width" from="0" to="38.891" begin="vertical4.end" dur="1s" fill="freeze"/>
+  <animate id="rect2" attributeName="height" from="0" to="38.891" begin="vertical4.end" dur="1s" fill="freeze"/>
+  <animate id="fill2" attributeName="fill" from="rgb(255,255,255)" to="rgb(0,0,0)" begin="rect4.end" dur="1s" fill="freeze"/>
+</rect>
+</svg>
