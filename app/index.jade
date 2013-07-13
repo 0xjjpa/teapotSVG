@@ -16,11 +16,6 @@ html.no-js
     //
        endbuild
     //
-      build:js scripts/main.js 
-    script(src='bower_components/polymer/polymer.min.js')
-    //
-      endbuild 
-    //
        build:js scripts/vendor/modernizr.js 
     script(src='bower_components/modernizr/modernizr.js')
     //
@@ -37,9 +32,10 @@ html.no-js
           ul.thumbnails
             +thumbnail('gears', "Gears", "Two gears rotating. The container is rotated through CSS3 transform and translate option", "/views/blocks/gears/gears.jpg")
             +thumbnail('cwlogo', "CW Logo", "Centralway Logo. Exported from Adobe Illustrator, animated by SVG native Animate Attrs", "/views/blocks/cwlogo/cwlogo.jpg")
+            +thumbnail('growingchart', "Growing Chart", "A RaphaelJS growing chart. No chart library was used, intended for scroll binding", "/views/blocks/growingchart/growingchart.jpg")
         .span6
           .viewport
-            object(data="/views/blocks/cwlogo/cwlogo.svg", type="image/svg+xml")
+            include views/blocks/gears/view
     footer
       .container
         .row

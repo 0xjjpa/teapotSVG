@@ -7,7 +7,10 @@
     "modernizr": "~2.6.2",
     "jquery": "~1.9.1",
     "flat-ui": "latest",
-    "polymer": "~0.0.20130711"
+    "polymer": "~0.0.20130711",
+    "raphael": "~2.1.0",
+    "eve-adobe": "~0.2.4",
+    "raphael-require": "git@github.com:jjperezaguinaga/raphael-require.git"
   },
   "devDependencies": {}
 }
