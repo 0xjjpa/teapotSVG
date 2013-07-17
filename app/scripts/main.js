@@ -1,9 +1,14 @@
 require.config({
     paths: {
+        //Libraries
         eve: '../bower_components/eve-adobe/eve',
         raphael: '../bower_components/raphael/raphael',
         jquery: '../bower_components/jquery/jquery',
         bootstrap: 'vendor/bootstrap',
+        //Loader
+        loader: 'config/loader',
+        //Animations
+        growingchart: 'animations/growingchart'
     },
     shim: {
         bootstrap: {
@@ -17,14 +22,9 @@ require.config({
     }
 });
 
-require([
-    'jquery', 'loader',
-    'growingchart'
-    ], function ($, b, l) {
+require(
+    [
+    'app',
+    ], function (app) {
     'use strict';
-    console.log(arguments);
-    l.init({
-        "growingchart": 3
-    });
-
 });
