@@ -1,10 +1,7 @@
 require.config({
     paths: {
-        eve: '../bower_components/raphael-require/eve',
-        'raphael-core': '../bower_components/raphael-require/raphael.core',
-        'raphael-svg': '../bower_components/raphael-require/raphael.svg',
-        'raphael-vml': '../bower_components/raphael-require/raphael.vml',
-        'raphael': '../bower_components/raphael-require/raphael.amd',
+        eve: '../bower_components/eve-adobe/eve',
+        raphael: '../bower_components/raphael/raphael',
         jquery: '../bower_components/jquery/jquery',
         bootstrap: 'vendor/bootstrap',
     },
@@ -14,12 +11,20 @@ require.config({
             exports: 'jquery'
         },
         raphael: {
+            deps: ['eve'],
             exports: 'Raphael'
         }
     }
 });
 
-require(['loader', 'jquery', 'bootstrap'], function (l, $) {
+require([
+    'jquery', 'loader',
+    'growingchart'
+    ], function ($, b, l) {
     'use strict';
-    l.load();
+    console.log(arguments);
+    l.init({
+        "growingchart": 3
+    });
+
 });

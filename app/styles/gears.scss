@@ -1,3 +1,23 @@
+@import 'compass/css3/transform';
+
+@keyframes _cogs-rotate-left {
+  from { 
+    @include transform(rotateZ(0deg))
+  }
+  to {
+    @include transform(rotateZ(-135deg))
+  }
+}
+
+@keyframes _cogs-rotate-right {
+  from { 
+    @include transform(rotateZ(0deg))
+  }
+  to {
+    @include transform(rotateZ(90deg))
+  }
+}
+
 @mixin gears {
   .gears {
     display: block;
@@ -38,3 +58,5 @@
     }
   }
 }
+
+@include gears

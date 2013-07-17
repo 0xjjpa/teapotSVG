@@ -1,8 +1,6 @@
-require(['raphael'], function (Raphael) {
-    'use strict';
-
-var chart = (function(R, undefined) {
-
+define(['raphael'], function (Raphael) {
+  'use strict';
+  var R = Raphael
   /* Finance animation
   We need to display a growing up chart when the user scrolls down to that segment, and lower it when it scrolls up.
   Options: Using a chart software (eg. d3.js), making it from scratch (hell no) or raphaeljs.
@@ -212,10 +210,17 @@ var chart = (function(R, undefined) {
 
   // Public methods from module
   self.init = function() {
-    paper = R("finances", 450, 241);  
-    console.log(paper);  
+    paper = R("growingchart", 450, 241);
     loadGraphicLinkedLists();
     drawNext();
+
+    var timeout = setTimeout(function triggerChart(){
+    if(self.drawNext()) {
+      timeout = setTimeout(triggerChart, self.getAnimationTimeout());
+    } else {
+      clearTimeout(timeout);
+    }
+  }, self.getAnimationTimeout());
     return self;
   }
 
@@ -226,18 +231,6 @@ var chart = (function(R, undefined) {
   self.drawNext = function() {
     return drawNext();
   }
-
-  return self;
-})(Raphael)
-
-chart.init();
-
-var timeout = setTimeout(function triggerChart(){
-  if(chart.drawNext()) {
-    timeout = setTimeout(triggerChart, chart.getAnimationTimeout());
-  } else {
-    clearTimeout(timeout);
-  }
-}, chart.getAnimationTimeout())
+  return self;  
 
 });

@@ -7,29 +7,28 @@ html.no-js
     title #{app}
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width')
-    // build:css(\{.tmp,app}) styles/main.css 
+    // build:css({.tmp,app}) styles/main.css 
     link(rel='stylesheet', href='bower_components/flat-ui/css/flat-ui.css')
     link(rel='stylesheet', href='styles/main.css')
     // endbuild
-    // build:js scripts/vendor/modernizr.js 
+    // build:js(app) scripts/vendor/modernizr.js 
     script(src='bower_components/modernizr/modernizr.js')
     // endbuild 
   body
     .container
       .demo-headline
         h1.demo-logo
-          include views/blocks/gears/view
+          include views/gears
           | #{app}
           small Web animations lab gallery for testing and benchmarking animations
       .row(style="padding-bottom: 100px")
         .span6.animations
           ul.thumbnails
-            +thumbnail('gears', "Gears", "Two gears rotating. The container is rotated through CSS3 transform and translate option", "/views/blocks/gears/gears.jpg")
-            +thumbnail('cwlogo', "CW Logo", "Centralway Logo. Exported from Adobe Illustrator, animated by SVG native Animate Attrs", "/views/blocks/cwlogo/cwlogo.jpg")
-            +thumbnail('growingchart', "Growing Chart", "A RaphaelJS growing chart. No chart library was used, intended for scroll binding", "/views/blocks/growingchart/growingchart.jpg")
+            +thumbnail('gears', "Gears", "Two gears rotating. The container is rotated through CSS3 transform and translate option", "images/blocks/gears/gears.jpg")
+            +thumbnail('cwlogo', "CW Logo", "Centralway Logo. Exported from Adobe Illustrator, animated by SVG native Animate Attrs", "images/blocks/cwlogo/cwlogo.jpg")
+            +thumbnail('growingchart', "Growing Chart", "A RaphaelJS growing chart. No chart library was used, intended for scroll binding", "images/blocks/growingchart/growingchart.jpg")
         .span6
           .viewport
-            include views/blocks/gears/view
     footer
       .container
         .row
@@ -62,4 +61,7 @@ html.no-js
       s.parentNode.insertBefore(g,s)}(document,'script'));
     // build:js(app) scripts/main.js 
     script(data-main='scripts/main', src='bower_components/requirejs/require.js')
-    // endbuild 
+    // endbuild
+    include views/gears
+    include views/cwlogo
+    include views/growingchart 

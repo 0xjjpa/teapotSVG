@@ -2,12 +2,14 @@
 define(['jquery'], function ($) {
     'use strict';
     var self = {};
+    self.currentModule = null;
     var VIEWPORT = '.viewport';
 
-    self.load = function() {
+    self.init = function(modules) {
       $('.media').on('click', function() {
         var id = $(this).data('id');
-        $(VIEWPORT).load('/templates/views/blocks/'+id+'/view.html');
+        $(VIEWPORT).html($("#"+id).html());
+        if(modules[id]) modules[id].init();
       });
     }
 
