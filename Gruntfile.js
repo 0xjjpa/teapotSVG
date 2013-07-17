@@ -1,4 +1,4 @@
-// Generated on 2013-07-10 using generator-webapp 0.2.6
+// Generated on 2013-06-27 using generator-webapp 0.2.4
 'use strict';
 var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
@@ -25,17 +25,20 @@ module.exports = function (grunt) {
     grunt.initConfig({
         yeoman: yeomanConfig,
         watch: {
+            options: {
+                nospawn: true
+            },
             coffee: {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
                 tasks: ['coffee:dist']
             },
-            jade: {
-                files: ['<%= yeoman.app %>/{,*/}*.jade'],
-                tasks: ['jade']
-            },
             coffeeTest: {
                 files: ['test/spec/{,*/}*.coffee'],
                 tasks: ['coffee:test']
+            },
+            jade: {
+                files: ['<%= yeoman.app %>/{,*/}*.jade'],
+                tasks: ['jade']
             },
             compass: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -55,6 +58,20 @@ module.exports = function (grunt) {
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
+            }
+        },
+        jade: {
+            dist: {
+                options: {
+                    pretty: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: '.tmp',
+                    src: '{,*/}*.jade',
+                    ext: '.html'
+                }]
             }
         },
         connect: {
@@ -110,7 +127,7 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
-            server: ['.tmp', '<%= yeoman.app %>/templates']
+            server: '.tmp'
         },
         jshint: {
             options: {
@@ -129,27 +146,6 @@ module.exports = function (grunt) {
                     run: true,
                     urls: ['http://localhost:<%= connect.options.port %>/index.html']
                 }
-            }
-        },
-        jade: {
-            dist: {
-                options: {
-                    pretty: true
-                },
-                files: [
-                {
-                    expand: true,
-                    cwd: '<%= yeoman.app %>',
-                    dest: '.tmp',
-                    src: '*.jade',
-                    ext: '.html'
-                },{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>',
-                    dest: 'app/templates',
-                    src: 'views/blocks/{,*/}*.jade',
-                    ext: '.html'
-                }]
             }
         },
         coffee: {
@@ -276,20 +272,14 @@ module.exports = function (grunt) {
             }
         },
         cssmin: {
-            // This task is pre-configured if you do not wish to use Usemin
-            // blocks for your CSS. By default, the Usemin block from your
-            // `index.html` will take care of minification, e.g.
-            //
-            //     <!-- build:css({.tmp,app}) styles/main.css -->
-            //
-            // dist: {
-            //     files: {
-            //         '<%= yeoman.dist %>/styles/main.css': [
-            //             '.tmp/styles/{,*/}*.css',
-            //             '<%= yeoman.app %>/styles/{,*/}*.css'
-            //         ]
-            //     }
-            // }
+            dist: {
+                files: {
+                    '<%= yeoman.dist %>/styles/main.css': [
+                        '.tmp/styles/{,*/}*.css',
+                        '<%= yeoman.app %>/styles/{,*/}*.css'
+                    ]
+                }
+            }
         },
         htmlmin: {
             dist: {
@@ -307,7 +297,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '.tmp',
-                    src: '{,*/}*.html',
+                    src: '*.html',
                     dest: '<%= yeoman.dist %>'
                 }]
             }
@@ -345,18 +335,17 @@ module.exports = function (grunt) {
         },
         concurrent: {
             server: [
-                'jade',
                 'compass',
                 'coffee:dist',
-                'copy:styles'
+                'copy:styles',
+                'autoprefixer'
             ],
             test: [
-                'jade',
                 'coffee',
-                'copy:styles'
+                'copy:styles',
+                'autoprefixer'
             ],
             dist: [
-                'jade',
                 'coffee',
                 'compass',
                 'copy:styles',
@@ -382,6 +371,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
+            'jade',
             'concurrent:server',
             'autoprefixer',
             'connect:livereload',
@@ -400,12 +390,13 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'jade',
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
         'requirejs',
-        'concat',
         'cssmin',
+        'concat',
         'uglify',
         'copy:dist',
         'rev',

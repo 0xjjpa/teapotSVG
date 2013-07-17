@@ -7,19 +7,13 @@ html.no-js
     title #{app}
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width')
-    //
-       Place favicon.ico and apple-touch-icon.png in the root directory 
-    //
-      | build:css(\{.tmp,app}) styles/main.css 
+    // build:css(\{.tmp,app}) styles/main.css 
     link(rel='stylesheet', href='bower_components/flat-ui/css/flat-ui.css')
     link(rel='stylesheet', href='styles/main.css')
-    //
-       endbuild
-    //
-       build:js scripts/vendor/modernizr.js 
+    // endbuild
+    // build:js scripts/vendor/modernizr.js 
     script(src='bower_components/modernizr/modernizr.js')
-    //
-       endbuild 
+    // endbuild 
   body
     .container
       .demo-headline
@@ -66,8 +60,6 @@ html.no-js
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src='//www.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
-    //
-      build:js scripts/main.js 
+    // build:js(app) scripts/main.js 
     script(data-main='scripts/main', src='bower_components/requirejs/require.js')
-    //
-      endbuild 
+    // endbuild 
