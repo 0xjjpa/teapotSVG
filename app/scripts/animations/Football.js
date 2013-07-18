@@ -46,7 +46,6 @@ var Football = {
          This functions include every other function calling.
      */
     init:function() {
-        console.log(0);
         this.setVariables();
         this.mainBorder.init();
         this.cornerArc.init();
@@ -496,6 +495,6 @@ var Football = {
         }
     }
 };
-
     return Football;
-})
+
+});
