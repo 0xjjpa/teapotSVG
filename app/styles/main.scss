@@ -6,6 +6,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 @import 'gears';
 @import 'footballfield';
 @import 'growingchart';
+@import 'lightbulb';
 
 .hero-unit {
     margin: 50px auto 0 auto;
@@ -16,10 +17,6 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
   background-size: 100%;
   padding: 19px 19px 133px;
   height: 230px;
-}
-
-.animations {
-  overflow-y: scroll;
 }
 
 .footer-banner {
