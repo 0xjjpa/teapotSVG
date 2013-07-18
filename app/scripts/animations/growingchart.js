@@ -210,6 +210,7 @@ define(['raphael'], function (Raphael) {
 
   // Public methods from module
   self.init = function() {
+    console.log(1);
     paper = R("growingchart", 450, 241);
     loadGraphicLinkedLists();
     drawNext();
