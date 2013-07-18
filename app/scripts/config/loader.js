@@ -1,7 +1,7 @@
 define(['jquery'], function ($) {
     'use strict';
+    
     var self = {};
-    self.currentModule = null;
     var VIEWPORT = '.viewport';
 
     self.init = function(modules) {

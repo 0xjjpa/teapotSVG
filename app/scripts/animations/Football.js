@@ -1,3 +1,4 @@
+define([], function () {
 /*
     Some kind of black magic for optimizing the frames for a canvas JS animations suggested by Paul Irish blog:
     http://paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -494,12 +495,7 @@ var Football = {
             player6.init(10, 670, 10, 430, Football.context7);
         }
     }
-
-
 };
-/*
-    Binding the whole object under the window object.
- */
-//window.Football = Football.init();
-//Football.init();
-console.log(-0);
+
+    return Football;
+})
