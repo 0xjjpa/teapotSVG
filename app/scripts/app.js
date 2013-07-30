@@ -2,12 +2,14 @@
 define(
   [
     'loader',
-    'growingchart'
+    'growingchart',
+    'Football'
   ],
-  function( l, g ) {
+  function( l, g, f ) {
     'use strict';
     l.init({
-        "growingchart": g
+        "growingchart": g,
+        "Football": f
     });
   }
 );

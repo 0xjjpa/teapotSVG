@@ -1,0 +1,12 @@
+div.footballFieldCanvasesWrapper {
+    position: relative;
+    height: 220px;
+    .footballFieldCanvases {
+      width: 340px;
+      height:  220px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+}

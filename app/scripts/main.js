@@ -8,7 +8,8 @@ require.config({
         //Loader
         loader: 'config/loader',
         //Animations
-        growingchart: 'animations/growingchart'
+        growingchart: 'animations/growingchart',
+        Football: 'animations/Football'
     },
     shim: {
         bootstrap: {
