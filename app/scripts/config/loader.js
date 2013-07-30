@@ -8,7 +8,6 @@ define(['jquery'], function ($) {
       $('.media').on('click', function() {
         var id = $(this).data('id');
         $(VIEWPORT).html($("#"+id).html());
-          console.log($("#"+id).html());
         if(modules[id]) modules[id].init();
       });
     }
